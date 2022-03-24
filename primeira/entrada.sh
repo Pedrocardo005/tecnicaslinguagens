@@ -1,0 +1,10 @@
+tecnologia:pedro:rua acre:100
+rh:joana:rua a:200
+adm:paulo:rua b:100
+vendas:carlos:rua c:200
+tecnologia:marcos:rua a:300
+rh:icaro:rua c:300
+adm:poliana:rua b:200
+vendas:felipe:rua acre:100
+vendas:joao:rua z:58
+tecnologia:ricardo:rua d:500
