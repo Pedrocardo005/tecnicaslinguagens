@@ -14,7 +14,12 @@ fi
 	done	
 	if [ $1 -ge 11 ]
 	then
-		menosdez=$(($1-10))
+		if [ $1 -lt 19  ]
+		then
+		    menosdez=$(($1-10))
+		else
+		    menosdez=9
+		fi
 		estrelas="*"
 		for i in $(seq 1 $menosdez); do
 			estrelas="${estrelas}*"
