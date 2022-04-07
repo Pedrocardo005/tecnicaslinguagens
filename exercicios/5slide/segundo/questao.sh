@@ -1,0 +1,2 @@
+top >> saida.txt
+break
