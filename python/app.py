@@ -23,6 +23,7 @@ class Planetas(pygame.sprite.Sprite):
     G = 6.67428e-11  # Constante Gravitacional
     ESCALA = 200 / UA  # 1 UA = 100 PIXELS
     TEMPO = 3600*24  # O Tempo de Órbita É ALTERADO AQUI (1 Dia = 1 Segundo)
+    nome = ''
 
     # Função, da classe Planetas, que será utilizada para definir os valores de x, y, raio, cor e massa (nessa ordem)
     def __init__(self, x, y, raio, cor, massa):
@@ -110,18 +111,23 @@ def main():  # Strings de Planetas e seus parâmetros (Dist. até o sol (x, y); 
 
     sol = Planetas(0, 0, 30, AMARELO, 1.98892 * 10**30)
     sol.sol = True
+    sol.nome = 'sol'
 
     terra = Planetas(-1 * Planetas.UA, 0, 16, AZUL, 5.9742 * 10**24)
     terra.y_vel = 29.783 * 1000
+    terra.nome = 'terra'
 
     marte = Planetas(-1.524 * Planetas.UA, 0, 12, VERMELHO, 6.39 * 10**23)
     marte.y_vel = 24.077 * 1000
+    marte.nome = 'marte'
 
     mercurio = Planetas(0.387 * Planetas.UA, 0, 8, CINZA_ESCURO, 3.30 * 10**24)
     mercurio.y_vel = -47.4 * 1000
+    mercurio.nome = 'mercurio'
 
     venus = Planetas(0.723 * Planetas.UA, 0, 14, CINZA_CLARO, 4.8685 * 10**24)
     venus.y_vel = -35.02 * 1000
+    venus.nome = 'venus'
 
     planets = [sol, terra, marte, mercurio, venus]
 
@@ -140,7 +146,7 @@ def main():  # Strings de Planetas e seus parâmetros (Dist. até o sol (x, y); 
                     # Checando se o círculo foi colidido, caso der 1 foi. 
                     click = planeta.drawed.collidepoint(pygame.mouse.get_pos())
                     if click == 1:
-                        print('clickado')
+                        print('clickado foi:', planeta.nome)
 
         for planeta in planets:
             planeta.posicao(planets)
