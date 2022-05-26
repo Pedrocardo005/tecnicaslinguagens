@@ -52,6 +52,7 @@ class Planetas(pygame.sprite.Sprite):
 
             pygame.draw.lines(win, self.cor, False, pontos_atualizados, 2)
 
+        # Armazenando o círculo no objeto
         self.drawed = pygame.draw.circle(win, self.cor, (x, y), self.raio)
 
         # Escreve a distância (em "km") de cada planeta até o sol
@@ -132,16 +133,14 @@ def main():  # Strings de Planetas e seus parâmetros (Dist. até o sol (x, y); 
             if event.type == pygame.QUIT:
                 ligado = False
 
+            # Checando se o evento foi o clique no botão
             if event.type == pygame.MOUSEBUTTONUP:
                 for planeta in planets:
+                    
+                    # Checando se o círculo foi colidido, caso der 1 foi. 
                     click = planeta.drawed.collidepoint(pygame.mouse.get_pos())
                     if click == 1:
                         print('clickado')
-                    # coordenadas = (planeta.x, planeta.y)
-                    # print('Coordenadas', coordenadas)
-                    # print('pos', event.pos)
-                    # if coordenadas == event.pos:
-                    #     print('Apertou no planeta')
 
         for planeta in planets:
             planeta.posicao(planets)
